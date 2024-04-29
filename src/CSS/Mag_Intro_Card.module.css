@@ -1,0 +1,19 @@
+.CardOuter{
+display: flex;
+justify-content: space-evenly;
+margin: 4rem 10rem 7.5rem 10rem;
+}
+
+.CardIntroduction{
+  width: 27rem;
+  gap: 4rem;
+
+}
+.CardIntroduction p{
+margin-top: 2rem;
+font-size: 1rem;
+margin-right: 4rem;
+}
+.CardIntroduction h1{
+  font-size: 5rem;
+}

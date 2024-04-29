@@ -1,0 +1,185 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+:root {
+  --up: 1;
+  --card-margin: 5px;
+  --card-shadow: rgba(46, 49, 52, .4);
+  --color-white: #fff;
+  --color-lightgrey: white;
+  --color-ui: #999;
+  --color-ui-hover: #666;
+  --cardWidth: calc(76vw/var(--up));
+  --carouselWidth: calc(var(--cardWidth) * var(--num));
+  --carouselLeftMargin: calc(11vw - var(--cardWidth));
+}
+
+.CarasoulDescription{
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+
+.carouselwrapper {
+  max-width: max-content;
+    overflow: hidden;
+    background:var(--color-lightgrey);
+    position:relative;
+    margin: 0;
+    
+    
+}
+
+.carousel{
+    width: var(--carouselWidth);
+    margin: 0 0 0 var(--carouselLeftMargin);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    
+    padding: 0;
+    
+    
+    
+  
+  &.prev {
+    animation-duration: 1s;
+    animation-timing-function:cubic-bezier(0.83, 0, 0.17, 1);
+    animation-name: prev;
+    
+  }
+  
+  &.next {
+    animation-duration: 1s;
+    animation-timing-function:cubic-bezier(0.83, 0, 0.17, 1);
+    animation-name: next;
+  }
+}
+
+.ui {
+  
+  width: calc(100% - var(--card-margin) * 2);
+  display: flex;
+  justify-content: center;
+
+  padding: var(--card-margin);
+  z-index: 100;
+  margin-top: 2rem;
+
+  
+  
+
+      span{
+        
+        font-size:45px ;
+      
+     
+  }
+}
+
+
+@keyframes next {
+  from {
+    transform: translateX(0px);
+    
+  }
+  to {
+    transform: translateX(calc(0px + var(--cardWidth)));
+    animation-duration: 2s; 
+  }
+  
+}
+
+@keyframes prev {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(calc(0px - var(--cardWidth)));
+  animation-duration: 2s; 
+
+  }
+}
+
+.outerFrame {
+  border: 1px solid black;
+  /* width: 30%; */
+  width: calc(var(--cardWidth) - var(--card-margin) * 1);
+  height: 22rem;
+  align-items: center;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  transition: transform 0.8ms cubic-bezier(0.42, 0, 0.58, 1), scale 0.8s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+
+   scale: 0.9;
+   opacity: 0.8;
+}
+.outerFrame.active{
+  scale: 1;
+  opacity: 1;
+}
+.potrait{
+  border: 1px solid black;
+  width:45%;
+  height: 15rem;
+  margin: 2rem;
+  border-radius: 8px;
+}
+
+.Introduction{
+  
+  width: 45%;
+  height: 15rem;
+  margin :2rem;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.potrait img{
+  width: 95%;
+  height: 15rem;
+  object-fit: cover;
+  rotate: 10deg;
+  border-radius: 0.5rem;
+} 
+  /* read more button  */
+.read{
+  border-radius: 2.5rem;
+  height: 2.5rem;
+  width:8rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+  
+  color: white;
+  background-color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin: 0 10px; 
+}
+
+
+.dot {
+  width: 12px; 
+  height: 12px; 
+  background-color: #ccc; 
+  border-radius: 50%; 
+  margin: 0 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+
+.dot.active {
+  background-color:black; 
+  
+}
+

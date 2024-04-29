@@ -1,0 +1,14 @@
+.All_magazine {
+  width: 80%;
+  margin: 7.5rem 10rem 7.5rem 10rem;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.mag_head {
+  width: 100%;
+  font-size: 1.5rem;
+}
+

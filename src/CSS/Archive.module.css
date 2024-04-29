@@ -1,0 +1,41 @@
+.MonthList{
+  list-style-type: none;
+  display: flex;
+  /* scroll-behavior: auto; */
+  padding :0;
+}
+.MonthList li{
+  margin: 0rem 0.4rem 0rem 0rem;
+  font-weight: 600;
+}
+.MonthList li:first-child{
+  font-weight:400;
+}
+
+.ArchConatiner{
+  display: flex;
+  justify-content:center;
+  gap: 12rem;
+  font-family: "Inter", sans-serif;
+  
+  width: 100%;
+}
+.ArchList{
+  height:22rem;
+  overflow-y: scroll;
+  width: max-content;
+  scrollbar-width: thin;
+  scrollbar-color:rgb(91, 85, 85) white;
+  scroll-behavior: smooth;
+  scroll-margin-right: 1rem;
+  ;
+  
+}
+.archHeading{
+  font-size: 32px;
+}
+.ArchiveImg {
+  margin-top: 2rem;
+
+}
+

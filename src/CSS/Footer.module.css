@@ -1,0 +1,38 @@
+.Footer{
+background-color: black;
+color: white;
+font-family: "Inter", sans-serif;
+display: flex;
+height: 26.5rem;
+align-items: center;
+margin-top: 7.5rem;
+}
+
+.list{
+  margin: 4rem;
+  width: 100%;
+}
+.list li{
+list-style-type: none;
+margin: 0.8rem;
+}
+.list li:first-child{
+  width: 120%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.Footer h1{
+  transform: translateY(-253%);
+  margin-left:1rem ;
+}
+.list:last-child li{
+  margin-bottom: 3rem;
+}
+
+.icons{
+  display: flex;
+  gap:0.5rem
+  
+}

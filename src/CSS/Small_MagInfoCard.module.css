@@ -1,0 +1,64 @@
+.InfoCard_Container{
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+border: 2px solid black;
+border-radius: 1.5rem;
+border-color: #c0c0c0;
+margin-bottom:1.5rem;
+
+}
+.InfoCard_Container img{
+  width: 22.5rem;
+  height: 22.5rem;
+  border-radius: 0.25rem;
+  margin: 2rem;
+}
+.Card_Introduction{
+margin: 2rem 2rem 2rem 0rem;
+display: flex;
+flex-direction: column;
+}
+.Card_Introduction li{
+  list-style-type: none;
+}
+.Card_Introduction h2{
+  margin:1rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.Card_Introduction p{
+  color: #808080;
+  width: 41.5rem;
+  height: 13rem;
+  font-size: 1.1rem;
+}
+.Card_Tags{
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #808080;
+font-size: 18px;
+}
+.Tags{
+  width: 78px;
+  height: 35px;
+  align-content: center;
+  padding-left: 1.8rem;
+  background-color: blanchedalmond;
+  color: black;
+  border-radius: 18px;
+}
+
+.buttonAlignment{
+  display: flex;
+  justify-content: end;
+ 
+}
+.buttonAlignment button{
+  width: 9.25rem;
+  height: 2.8rem;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+}
+

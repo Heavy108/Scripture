@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+.horizontal_line{
+  width: 75%;
+  margin-left: 12rem;
+  
+  
+  height: .75rem; 
+  border-bottom:2px solid black; 
+  text-align: center;
+}
+.Subscribe_message{
+  font-size: 1rem;
+  background-color:white;
+  padding: 0 20px;
+}
+.Newsletter_outerFrame{
+  display: flex;
+  justify-content:center;
+  gap: 12rem;
+  margin-top:7.5rem;
+  width: 100%;
+  margin-bottom:7.5rem;
+}
+.Subscribe_Section{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+
+}
+.Subscribe_Section h2{
+  margin: 0;
+  
+}
+.Subscribe_Section p{
+  color: #BEBEBE;
+  font-weight: 400;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.Subscribe_button{
+  border-radius: 2.5rem;
+  height: 2.5rem;
+  width:8rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+  
+  color: white;
+  background-color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+label{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+
+
+.input_container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bebebe;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: #bebebe;
+}
+
+.input_field {
+  border: none;
+  outline: none;
+  width: 100%;
+}
