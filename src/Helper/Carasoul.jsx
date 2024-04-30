@@ -1,6 +1,7 @@
-'use client'
+"use client";
 import "../CSS/Carasoul.css";
-import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
+// import { FaArrowLeft,FaArrowRight } from "react-icons/fa";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 import { useState, useEffect } from "react";
 //Data
@@ -126,11 +127,8 @@ const Carasoul = () => {
         </ul>
 
         <div className="ui">
-          <span
-            onClick={() => setMoveClass("next")}
-            className="prev"
-          >
-          <FaArrowLeft/>
+          <span onClick={() => setMoveClass("next")} className="prev">
+            <GoArrowLeft />
           </span>
 
           <div className="dots-container">
@@ -139,12 +137,8 @@ const Carasoul = () => {
             ))}
           </div>
 
-          <span
-            onClick={() => setMoveClass("prev")}
-            className="next"
-          >
-               <FaArrowRight/>
-          
+          <span onClick={() => setMoveClass("prev")} className="next">
+            <GoArrowRight />
           </span>
         </div>
       </div>

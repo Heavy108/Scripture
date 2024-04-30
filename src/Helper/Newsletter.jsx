@@ -1,4 +1,3 @@
-import Newsletter from "/Newsletter.svg";
 import style from "../CSS/Newsletter.module.css";
 import { MdEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
@@ -11,9 +10,9 @@ function NewsLetter() {
           <h2>Subscribe Newsletter</h2>
           <p>Subscribe to our email & get updates right your inbox</p>
 
-          <form action="#">
+          <form action="#" className={style.form}>
 
-            <label htmlFor="Name">Name</label>
+            <label htmlFor="Name" className={style.label}>Name</label>
 
             <div className={style.input_container}>
 
@@ -25,7 +24,7 @@ function NewsLetter() {
               
             </div>
 
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email" className={style.label}>Email Address</label>
             <div className={style.input_container}>
               <MdEmail className={style.icon} />
               <input placeholder="Enter Email" className={style.input_field} />
@@ -36,7 +35,7 @@ function NewsLetter() {
         </div>
 
         <div className={style.Newsletter_image}>
-          <img src={Newsletter} alt="Newsletter image" />
+          <img src='/Newsletter.svg' alt="Newsletter image" />
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import ArchiveImage from "/Archive.svg";
+
 import style from "../CSS/Archive.module.css";
 const MonthList = (props) => {
   //Months List
@@ -32,7 +32,7 @@ function Archive() {
     <>
       <div className={style.ArchConatiner}>
         <div className={style.ArchiveImg}>
-          <img src={ArchiveImage} alt="ArchSearch" />
+          <img src="/Archive.svg" alt="ArchSearch" />
         </div>
         <div style={{ width: "25.12rem" }}>
           <h2 className={style.archHeading}>Archive</h2>

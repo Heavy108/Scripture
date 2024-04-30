@@ -9,7 +9,7 @@ function MagCard({title,image,Info}){
         <h1 >{title}</h1>
         <p>{Info}</p>
       </div>
-      <img src={image}/>
+      <img src={image} className={style.image}/>
     </div>
     </>
   )

@@ -17,3 +17,6 @@ margin-right: 4rem;
 .CardIntroduction h1{
   font-size: 5rem;
 }
+.image{
+  filter: grayscale();
+}

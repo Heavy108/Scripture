@@ -50,8 +50,8 @@ font-size: 18px;
 }
 
 .buttonAlignment{
-  display: flex;
-  justify-content: end;
+  display: flex-end;
+  
  
 }
 .buttonAlignment button{

@@ -1,8 +1,11 @@
+'use client'
+import style from "../CSS/MagCluster.module.css";
 import React, { useState } from "react";
 import Pagination from "./Pagination";
-import style from "../CSS/MagCluster.module.css";
+import ThreeCardFrame from "./ThreeCardFrame";
+import Magazine from "../Helper/Magazine_Frame_1";
 
-function Mag_Section({ MagazineComponent, Data, MagazinesPerPage}) {
+function Mag_Section({  Data, MagazinesPerPage}) {
   const [currentPage, setCurrentPage] = useState(1);
  
   const lastIndex = currentPage * MagazinesPerPage;
@@ -33,12 +36,21 @@ function Mag_Section({ MagazineComponent, Data, MagazinesPerPage}) {
         <h4>All Magazine</h4>
       </center>
 
-      {records.map((items, index) => (
-        <MagazineComponent
-          key={index}
-          {...items} // Passing  all properties from 'items' as props
-        />
-      ))}
+      {MagazinesPerPage > 3 ? (
+  records.map((items, index) => (
+    <Magazine
+      key={index}
+      {...items} // Passing all properties from 'items' as props
+    />
+  ))
+) : (
+  records.map((items, index) => (
+    <ThreeCardFrame 
+      key={index}
+      {...items} // Passing all properties from 'items' as props
+    />
+  ))
+)}
 
       <Pagination
         currentPage={currentPage}

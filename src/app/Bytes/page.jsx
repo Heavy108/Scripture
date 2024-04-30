@@ -1,5 +1,9 @@
-import MagCard from "./Mag_Intro_Card";
-
+import "../global.css";
+import MagCard from "../../Helper/Mag_Intro_Card";
+import NavBar from "../../Helper/NavBar";
+import Mag_Section from "../../Helper/MagCluster";
+import Footer from "../../Helper/Footer";
+import {Data2} from "../../JS/Data";
 function Byte(){
   
     
@@ -9,12 +13,16 @@ function Byte(){
   
   return (
     <>
+    
+    <NavBar/>
       <MagCard 
       title={Title}
       image ={Image}
       Info ={Description}
       />
-     
+      <Mag_Section Data={Data2} MagazinesPerPage={3}/>
+      
+    <Footer/>
 
 
     </>

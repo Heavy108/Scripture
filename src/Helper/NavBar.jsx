@@ -3,13 +3,13 @@ function NavBar() {
   return (
     <>
       <div className={styles.Navbar}>
-        <h2>Scripture</h2>
+        <h2 ><a href="/Home">Scripture</a></h2>
         <div className={styles.options}>
+          <a href="/Bytes">Bytes</a>
+          <a href="/SciTech">SciTech</a>
+          <a href="">Interviews</a>
           <a href="#">Bytes</a>
-          <a href="#">SciTech</a>
-          <a href="#">Interviews</a>
-          <a href="#">Bytes</a>
-          <a href="#">Events</a>
+          <a href="/Events">Events</a>
           <a href="#">About Us</a>
         </div>
         <button className={styles.navButton}>Contact US</button>

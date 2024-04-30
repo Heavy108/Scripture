@@ -1,3 +1,4 @@
+
 import style from "../CSS/Magazine_Frame_1.module.css";
 
 

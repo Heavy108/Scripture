@@ -1,7 +1,7 @@
-import style from "../CSS/Small_MagInfoCard.module.css";
+import style from "../CSS/ThreeCardFrame.module.css";
 
 
-function SmallInfoCard(props){
+function ThreeCardFrame(props){
 return (
   <>
   <div className={style.InfoCard_Container}>
@@ -25,4 +25,4 @@ return (
 )
 }
 
-export default SmallInfoCard;
+export default ThreeCardFrame;
