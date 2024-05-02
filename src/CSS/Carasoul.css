@@ -157,6 +157,7 @@
   background-color: black;
   font-weight: 700;
   font-style: normal;
+  cursor:pointer;
 }
 
 .dots-container {
@@ -182,4 +183,6 @@
   background-color:black; 
   
 }
-
+.prev ,.next{
+  cursor: pointer;
+}
