@@ -3,7 +3,14 @@ import MagCard from "../../Helper/Mag_Intro_Card";
 import NavBar from "../../Helper/NavBar";
 import Mag_Section from "../../Helper/MagCluster";
 import Footer from "../../Helper/Footer";
-import {Data2} from "../../JS/Data";
+ import {Data2} from "../../JS/Data";
+// import Data1 from "../api/Bytes/route";
+import { fetchData } from "../api/Bytes/route";
+const data  = await fetchData();
+// const Data2 =fetchData()
+console.log('here')
+// console.log(JSON.stringify(Data2))
+console.log("end")
 function Byte(){
   
     
