@@ -1,7 +1,11 @@
+// 'use client'
 import style from "../CSS/ThreeCardFrame.module.css";
 
 
 function ThreeCardFrame(props){
+
+
+ 
 return (
   <>
   <div className={style.InfoCard_Container}>
@@ -15,9 +19,11 @@ return (
         <h2>{props.Title}</h2>
         <p>{props.Description}</p>
       </div>
+     
       <div className={style.buttonAlignment}>
       <button>Read More</button>
-      </div>
+    </div>
+    
     </div>
 
   </div>

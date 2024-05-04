@@ -269,127 +269,14 @@ const Data3 =[
 
 
 
- const Data4 =[
+ export const Data4 =[
+  {
+    "_id": "BL2",
+    "ref_id": "SC2",
+    "Para1": "<p>DataFest is an event dedicated to exploring the vast realm of big data.</p> <p>Discover the power of big data at DataFest, where cutting-edge technologies meet innovative ideas.</p> <p>DataFest invites you to embark on a journey into the realm of big data analytics.</p> <p>DataFest is your gateway to the world of big data, offering a comprehensive overview of the latest trends and technologies.</p> <p>Join us at DataFest for a deep dive into the world of big data and analytics.</p> <p>DataFest offers a unique opportunity to explore the world of big data and analytics.</p> <p>DataFest is the premier event for professionals working in the field of big data and analytics.</p> <p>DataFest is the ultimate destination for anyone interested in the field of big data and analytics.</p> <p>DataFest is a must-attend event for anyone passionate about big data and analytics.</p> <p>DataFest brings together industry leaders and experts to explore the latest trends and developments in big data.</p>",
+    "pdfaddress": "/pdf/1.pdf"
+  }
+  
  
-
- {
-   _id: "BC01",
-   ref_id: "SC1",
-   Paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl nisi scelerisque eu ultrices vitae auctor. Quis viverra nibh cras pulvinar mattis nunc sed...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC02",
-   ref_id: "SC2",
-   Paragraph: "At elementum eu facilisis sed odio. Eget nunc lobortis mattis aliquam faucibus purus in massa tempor. Viverra maecenas accumsan lacus vel facilisis volutpat est velit...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC03",
-   ref_id: "SC3",
-   Paragraph: "Tristique senectus et netus et malesuada. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Volutpat blandit aliquam etiam erat...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC04",
-   ref_id: "SC4",
-   Paragraph: "Aliquam sem et tortor consequat id. Aliquam id diam maecenas ultricies mi eget. Vitae elementum curabitur vitae nunc sed velit dignissim...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC05",
-   ref_id: "SC5",
-   Paragraph: "Faucibus nisl tincidunt eget nullam non. Nisi lacus sed viverra tellus in hac. Est placerat in egestas erat imperdiet sed euismod nisi porta...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC06",
-   ref_id: "SC6",
-   Paragraph: "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Vel risus commodo viverra maecenas accumsan. Sagittis orci a scelerisque purus semper eget duis...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC07",
-   ref_id: "SC7",
-   Paragraph: "Suscipit adipiscing bibendum est ultricies integer quis. Faucibus nisl tincidunt eget nullam non. Nisi lacus sed viverra tellus in hac...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC08",
-   ref_id: "SC8",
-   Paragraph: "Quis viverra nibh cras pulvinar mattis nunc sed. Ut lectus arcu bibendum at varius vel pharetra vel. Maecenas ultricies mi eget mauris pharetra...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-   _id: "BC09",
-   ref_id: "SC9",
-   Paragraph: "Fringilla phasellus faucibus scelerisque eleifend. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Viverra justo nec ultrices dui sapien...",
-   Download_Link: "",
-   View_Link: ""
-},
-
- {
-    _id: "BC10",
-    ref_id: "SC10",
-    Paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl nisi scelerisque eu ultrices vitae auctor...",
-    Download_Link: "",
-    View_Link: ""
-},
-
- {
-    _id: "BC11",
-    ref_id: "SC11",
-    Paragraph: "Orci dapibus ultrices in iaculis nunc. Euismod elementum nisi quis eleifend quam adipiscing vitae proin. Gravida neque convallis a cras semper auctor neque vitae tempus...",
-    Download_Link: "",
-    View_Link: ""
-},
-
- {
-    _id: "BC12",
-    ref_id: "SC12",
-    Paragraph: "Tellus integer feugiat scelerisque varius. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Adipiscing elit duis tristique sollicitudin nibh...",
-    Download_Link: "",
-    View_Link: ""
-},
-
- {
-    _id: "BC13",
-    ref_id: "SC13",
-    Paragraph: "Tempor id eu nisl nunc mi ipsum faucibus. Sit amet risus nullam eget felis eget nunc. A erat nam at lectus urna duis convallis convallis tellus...",
-    Download_Link: "",
-    View_Link: ""
-},
-
-{
-    _id: "BC14",
-    ref_id: "SC14",
-    Paragraph: "Eu scelerisque felis imperdiet proin fermentum leo vel orci. Vulputate mi sit amet mauris commodo quis imperdiet massa. Interdum posuere lorem ipsum dolor sit amet consectetur...",
-    Download_Link: "",
-    View_Link: ""
-},
-
- {
-    _id: "BC15",
-    ref_id: "SC15",
-    Paragraph: "Est pellentesque elit ullamcorper dignissim cras. Vel pretium lectus quam id leo in vitae turpis. Turpis egestas maecenas pharetra convallis...",
-    Download_Link: "",
-    View_Link: ""
-},
-
- ]
+  
+]

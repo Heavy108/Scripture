@@ -1,9 +1,13 @@
 import "../global.css";
 import MagCard from "../../Helper/Mag_Intro_Card";
 import NavBar from "../../Helper/NavBar";
-
+import Mag_Section from "../../Helper/MagCluster";
 import Footer from "../../Helper/Footer";
-function Byte(){
+import { fetchData } from "../api/SciTech/route";
+
+const data = await fetchData();
+const serializedData = data.map((item) => item.toObject());
+function SciTech(){
   
     
     const Title="SciTech"
@@ -18,6 +22,7 @@ function Byte(){
       image ={Image}
       Info ={Description}
       />
+      <Mag_Section Data={serializedData} MagazinesPerPage={3}/>
     <Footer/>
      
 
@@ -25,4 +30,4 @@ function Byte(){
     </>
   )
 }
-export default Byte;
+export default SciTech;

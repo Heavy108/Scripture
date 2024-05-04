@@ -10,6 +10,10 @@ const MagazineSchema = new mongoose.Schema({
   image: String,
 });
 
-const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);
+// const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);
+const Magazine = mongoose.models.Magazine || mongoose.model("Magazine", MagazineSchema);
+
+
+console.log(mongoose.models);
 
 export default Magazine;
