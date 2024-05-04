@@ -8,6 +8,8 @@ const MagazineSchema = new mongoose.Schema({
   Title: String,
   Description: String,
   image: String,
+  Para1 : String,
+  pdfadress : String,
 });
 
 // const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);

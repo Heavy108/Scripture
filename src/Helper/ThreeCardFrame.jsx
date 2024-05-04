@@ -1,10 +1,9 @@
 // 'use client'
 import style from "../CSS/ThreeCardFrame.module.css";
+import Link from 'next/link';
 
 
 function ThreeCardFrame(props){
-
-
  
 return (
   <>
@@ -21,7 +20,9 @@ return (
       </div>
      
       <div className={style.buttonAlignment}>
-      <button>Read More</button>
+      <Link href={{ pathname: '/Blog', query: { ...props } }} passHref>
+        <button>Read More</button>
+      </Link>
     </div>
     
     </div>

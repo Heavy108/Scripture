@@ -1,32 +1,41 @@
-
+'use client'
 import "../global.css";
-import style from "@/CSS/Blog.module.css";
 import NavBar from "@/Helper/NavBar";
 import Comment from "@/Helper/Comment";
 import Footer from "@/Helper/Footer";
-import { Data4 } from "@/JS/Data";
 import BlogFrame from "@/Helper/BlogFrame";
-import { fetchBlogData } from "../api/Blog/route";
-// import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
-const Data = await fetchBlogData();
-// const serializedData = Data.map((item) => item.toObject());
 
-function Blog() {
-  // const searchParams = useSearchParams();
+
+
+ function Blog() {
+  const searchParams = useSearchParams();
+  // const id = searchParams.get("_id");
+  const image = searchParams.get("image");
+  const tags = searchParams.get("tags");
+  const Date = searchParams.get("Date");
+  const Title = searchParams.get("Title");
+  const field = searchParams.get("field");
+  const Para1 = searchParams.get("Para1");
+  const pdfaddress = searchParams.get("pdfadress");
+
   
-  // const image = searchParams.get("image");
-  // const tags = searchParams.get("tags");
-  // const Date = searchParams.get("Date");
-  // const Title = searchParams.get("Title");
-  // const field = searchParams.get("field");
-
-  
-
+//  const data = await fetchBlogData(id);
+//  const serializedData = data.map((item) => item.toObject());
   return (
     <>
       <NavBar />
-    <BlogFrame data ={Data}/>
+    <BlogFrame 
+    // data ={serializedData} 
+    image ={image}
+    tags ={tags}
+    Date = {Date}
+    Title ={Title}
+    field ={field}
+    Para1 ={Para1}
+    pdfadress= {pdfaddress}
+    />
       <Comment />
       <Footer />
     </>
