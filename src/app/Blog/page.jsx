@@ -1,15 +1,14 @@
-'use client'
+"use client";
 import "../global.css";
+import style from "@/CSS/Blog.module.css";
 import NavBar from "@/Helper/NavBar";
 import Comment from "@/Helper/Comment";
 import Footer from "@/Helper/Footer";
-import BlogFrame from "@/Helper/BlogFrame";
+// import { Data4 } from "@/JS/Data";
 import { useSearchParams } from "next/navigation";
 
 
-
-
- function Blog() {
+function Blog() {
   const searchParams = useSearchParams();
   // const id = searchParams.get("_id");
   const image = searchParams.get("image");
@@ -20,22 +19,40 @@ import { useSearchParams } from "next/navigation";
   const Para1 = searchParams.get("Para1");
   const pdfaddress = searchParams.get("pdfadress");
 
-  
-//  const data = await fetchBlogData(id);
-//  const serializedData = data.map((item) => item.toObject());
+
+
   return (
     <>
       <NavBar />
-    <BlogFrame 
-    // data ={serializedData} 
-    image ={image}
-    tags ={tags}
-    Date = {Date}
-    Title ={Title}
-    field ={field}
-    Para1 ={Para1}
-    pdfadress= {pdfaddress}
-    />
+      <div className={style.blog_container}>
+        <div className={style.InfoCard_Container}>
+          <img src={image} />
+          <div className={style.Card_Introduction}>
+            <div className={style.Card_Tags}>
+              <li className={style.Tags}>{tags}</li>
+              <li>{Date}</li>
+              <li>{field}</li>
+            </div>
+
+            <h2>{Title}</h2>
+            {/* button here */}
+            <div className={style.buttonAlignment}>
+              <button><a href={pdfaddress}>Download</a></button>
+              <button>View</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={style.Para1Container}>
+        {Para1 && (
+            <div
+              className={style.content}
+              dangerouslySetInnerHTML={{ __html: Para1 }}
+            />
+          )}
+        </div>
+      </div>
+
       <Comment />
       <Footer />
     </>

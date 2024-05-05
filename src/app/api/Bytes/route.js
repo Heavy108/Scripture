@@ -7,7 +7,7 @@ connect();
 
 export async function fetchData() {
   try {
-    const Data = await Magazine.find();
+    const Data = await Magazine.find({tags:"GDSC"});
    
     return Data;
   } catch (e) {

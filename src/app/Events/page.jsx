@@ -1,9 +1,12 @@
 import "../global.css";
 import MagCard from "../../Helper/Mag_Intro_Card";
 import NavBar from "../../Helper/NavBar";
-
+import Mag_Section from "@/Helper/MagCluster";
 import Footer from "../../Helper/Footer";
-function Byte(){
+import { fetchData } from "../api/Events/route";
+const data = await fetchData();
+const serializedData = data.map((item) => item.toObject());
+function Events(){
   
     
     const Title="Events"
@@ -18,8 +21,9 @@ function Byte(){
       image ={Image}
       Info ={Description}
       />
+       <Mag_Section Data={serializedData} MagazinesPerPage={3}/>
     <Footer/>
     </>
   )
 }
-export default Byte;
+export default Events;

@@ -1,9 +1,18 @@
 // 'use client'
+// import { useRouter } from "next/navigation";
 import style from "../CSS/ThreeCardFrame.module.css";
 import Link from 'next/link';
-
+// import { fetchBlogData } from "@/app/api/Blog/route";
 
 function ThreeCardFrame(props){
+  // const router =useRouter();
+  // const HandleClick =() =>{
+  //   console.log("i am")
+  //   router.forward({
+  //     href: "/Blog",
+  //     query : {...props}
+  //   })
+  // }
  
 return (
   <>
@@ -20,9 +29,10 @@ return (
       </div>
      
       <div className={style.buttonAlignment}>
-      <Link href={{ pathname: '/Blog', query: { ...props } }} passHref>
+      <Link href={{ pathname: '/Blog', query: { ...props } }} >
         <button>Read More</button>
       </Link>
+      
     </div>
     
     </div>

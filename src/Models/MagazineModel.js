@@ -13,7 +13,7 @@ const MagazineSchema = new mongoose.Schema({
 });
 
 // const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);
-const Magazine = mongoose.models.Magazine || mongoose.model("Magazine", MagazineSchema);
+const Magazine = mongoose.models.OneMagazine || mongoose.model("OneMagazine", MagazineSchema);
 
 
 console.log(mongoose.models);
