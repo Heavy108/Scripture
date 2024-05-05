@@ -1,13 +1,13 @@
 
 import { connect } from "@/dbconfig/dbconfig";
 import { NextRequest, NextResponse } from "next/server";
-import Magazine from "@/Models/MagazineModel";
+import Carasoul from "@/Models/CarasoulModel";
 
 connect();
 
-export async function fetchData() {
+export async function fetchCarasoulData() {
   try {
-    const Data = await Magazine.find();
+    const Data = await Carasoul.find();
    
     return Data;
   } catch (e) {

@@ -6,9 +6,15 @@ import NavBar from "../../Helper/NavBar";
 import Archive from "../../Helper/Archive";
 import NewsLetter from "../../Helper/Newsletter";
 import Footer from "../../Helper/Footer";
-import {Data} from "../../JS/Data";
+// import {Data} from "../../JS/Data";
 
+import { fetchData } from "../api/Home/route";
+import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
+const Data =await fetchCarasoulData();
+const items = Data.map((item) => item.toObject());
+const data = await fetchData();
+const serializedData = data.map((item) => item.toObject());
 
 
 
@@ -16,8 +22,8 @@ function Home(){
   return(
     <>
     <NavBar/>
-    <Carasoul/>
-    <Mag_Section Data={Data} MagazinesPerPage={9}/>
+    <Carasoul items={items}/>
+    <Mag_Section Data={serializedData} MagazinesPerPage={9}/>
       <Archive/>
       <NewsLetter/>
       <Footer/> 

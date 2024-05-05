@@ -14,11 +14,19 @@
 .mag_Info {
   display: flex;
   justify-content: space-between;
+  text-align: center;
   width: 20rem;
   margin: 0rem 1rem 0 1rem;
 }
 
 .mag_Info span {
-  padding: 1rem 0rem;
+  /* padding: 1rem 0rem; */
   font-weight: 600;
+ 
+}
+.link{
+text-decoration: none;
+align-content: center;
+color: black;
+cursor: pointer;
 }

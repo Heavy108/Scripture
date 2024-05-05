@@ -4,30 +4,8 @@ import "../CSS/Carasoul.css";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 import { useState, useEffect } from "react";
-//Data
-const items = [
-  {
-    Id: 1,
-    title: "Interview with Dr. Anil Sharma",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non mauris nulla tincidunt fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    image: "/3.webp",
-    bg_color: "#000000",
-  },
-  {
-    id: 2,
-    title: "Computer Vision: Image Recognization",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non mauris nulla tincidunt fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing",
-    image: "/2.webp",
-    bg_color: "#250E63",
-  },
-  {
-    id: 3,
-    title: "Interview with Dr. Anil Sharma",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non mauris nulla tincidunt fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing",
-    image: "/1.webp",
-    bg_color: "#7E1617",
-  },
-];
+
+
 
 const Card = (props) => {
   //Carausel Frame
@@ -57,7 +35,7 @@ const Dot = (props) => {
   return <span className={`dot ${props.position ? "active" : ""}`}></span>;
 };
 
-const Carasoul = () => {
+const Carasoul = ({items}) => {
   const [moveClass, setMoveClass] = useState(""); //next and prev
   const [carouselItems, setCarouselItems] = useState(items);
   const [currentSlide, setCurrentSlide] = useState(0); //current Slide number
@@ -133,8 +111,11 @@ const Carasoul = () => {
 
           <div className="dots-container">
             {carouselItems.map((z, index) => (
-              <Dot key={index} position={z.Id === currentSlide} />
+              <Dot key={index} position={z._id == currentSlide} />
+              
+             
             ))}
+             
           </div>
 
           <span onClick={() => setMoveClass("prev")} className="next">
