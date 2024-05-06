@@ -4,7 +4,7 @@ const MagazineSchema = new mongoose.Schema({
   _id: String,
   field: String,
   tags: String,
-  Date: String,
+  Date: Date,
   Title: String,
   Description: String,
   image: String,
@@ -16,6 +16,6 @@ const MagazineSchema = new mongoose.Schema({
 const Magazine = mongoose.models.OneMagazine || mongoose.model("OneMagazine", MagazineSchema);
 
 
-console.log(mongoose.models);
+// console.log(mongoose.models);
 
 export default Magazine;

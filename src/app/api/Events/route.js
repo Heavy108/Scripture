@@ -7,9 +7,17 @@ connect();
 
 export async function fetchData() {
   try {
-    const Data = await Magazine.find({tags:"events"});
-   
-    return Data;
+    const Data = await Magazine.find({tags:"events"}).lean().exec();
+    const plainObjects = Data.map(obj => {
+      return {
+        ...obj,
+        Date: obj.Date.toJSON()
+      };
+    });
+    console.log(plainObjects)
+    return plainObjects;
+    // console.log(Data)
+    // return Data;
   } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

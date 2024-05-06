@@ -4,11 +4,13 @@ import "../CSS/Carasoul.css";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 
 const Card = (props) => {
   //Carausel Frame
+  
   return (
     <>
       <div className={`outerFrame ${props.isActive ? "active" : ""}`}>
@@ -23,7 +25,9 @@ const Card = (props) => {
         <div className="Introduction">
           <h1>{props.title}</h1>
           <p>{props.text}</p>
+          <Link href={props.address}>
           <button className="read"> Read More</button>
+          </Link>
         </div>
       </div>
     </>
@@ -99,6 +103,7 @@ const Carasoul = ({items}) => {
               title={t.title}
               image={t.image}
               bg_color={t.bg_color}
+              address ={t.address}
               isActive={index === currentSlide}
             />
           ))}

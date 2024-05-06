@@ -11,7 +11,7 @@ import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/Home/route";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
-const Data =await fetchCarasoulData();
+const Data =await fetchCarasoulData()
 const items = Data.map((item) => item.toObject());
 const data = await fetchData();
 const serializedData = data.map((item) => item.toObject());

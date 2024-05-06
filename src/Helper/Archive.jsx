@@ -1,28 +1,35 @@
-
+'use client'
 import style from "../CSS/Archive.module.css";
+import Link from "next/link";
+
 const MonthList = (props) => {
-  //Months List
+  // Function to handle click on a month
+  const handleClick = (event) => {
+    const monthValue = event.target.getAttribute('data-month');
+    const monthName = new Date(props.year, monthValue - 1, 1).toLocaleString('en', { month: 'short' }).slice(0, 3);
+    
+    // Construct URL with query parameters
+    const searchUrl = `/Search?year=${props.year}&month=${monthName}`;
+
+    // Navigate to search page
+    window.location.href = searchUrl;
+  };
+
   return (
     <>
       <ul className={style.MonthList}>
         <li>{props.year}: </li>
-        <li>Jan</li>
-        <li>Feb</li>
-        <li>Mar</li>
-        <li>Apr</li>
-        <li>May</li>
-        <li>Jun</li>
-        <li>Jul</li>
-        <li>Aug</li>
-        <li>Sep</li>
-        <li>Oct</li>
-        <li>Nov</li>
-        <li>Dec</li>
+        {[...Array(12).keys()].map((month) => (
+          <li key={month} onClick={handleClick} data-month={month + 1}>
+            {new Date(props.year, month, 1).toLocaleString('en', { month: 'short' }).slice(0, 3)}
+          </li>
+        ))}
       </ul>
       <hr />
     </>
   );
 };
+
 
 function Archive() {
   const currentYear = new Date().getFullYear(); //current year

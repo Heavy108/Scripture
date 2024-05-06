@@ -4,8 +4,9 @@ import NavBar from "../../Helper/NavBar";
 import Mag_Section from "@/Helper/MagCluster";
 import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/Events/route";
+
 const data = await fetchData();
-const serializedData = data.map((item) => item.toObject());
+// const serializedData = data.map((item) => item.toObject());
 function Events(){
   
     
@@ -21,7 +22,7 @@ function Events(){
       image ={Image}
       Info ={Description}
       />
-       <Mag_Section Data={serializedData} MagazinesPerPage={3}/>
+       <Mag_Section Data={data} MagazinesPerPage={3}/>
     <Footer/>
     </>
   )

@@ -5,6 +5,7 @@ import NavBar from "@/Helper/NavBar";
 import Comment from "@/Helper/Comment";
 import Footer from "@/Helper/Footer";
 // import { Data4 } from "@/JS/Data";
+import ViewPDFButton from "@/Helper/pdf";
 import { useSearchParams } from "next/navigation";
 
 
@@ -17,10 +18,17 @@ function Blog() {
   const Title = searchParams.get("Title");
   const field = searchParams.get("field");
   const Para1 = searchParams.get("Para1");
-  const pdfaddress = searchParams.get("pdfadress");
+  const pdfaddress = searchParams.get("pdfaddress");
 
-
-
+ 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = pdfUrl.split("/").pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <>
       <NavBar />
@@ -37,8 +45,8 @@ function Blog() {
             <h2>{Title}</h2>
             {/* button here */}
             <div className={style.buttonAlignment}>
-              <button><a href={pdfaddress}>Download</a></button>
-              <button>View</button>
+              <button onClick={handleDownload}>Download</button>
+              <ViewPDFButton phdfPath={pdfaddress} />
             </div>
           </div>
         </div>
