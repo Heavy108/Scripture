@@ -1,4 +1,4 @@
-// 'use client'
+
 import { connect } from "@/dbconfig/dbconfig";
 import { NextRequest, NextResponse } from "next/server";
 import Magazine from "@/Models/MagazineModel";

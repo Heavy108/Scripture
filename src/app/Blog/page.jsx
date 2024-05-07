@@ -8,7 +8,6 @@ import Footer from "@/Helper/Footer";
 import ViewPDFButton from "@/Helper/pdf";
 import { useSearchParams } from "next/navigation";
 
-
 function Blog() {
   const searchParams = useSearchParams();
   // const id = searchParams.get("_id");
@@ -20,7 +19,6 @@ function Blog() {
   const Para1 = searchParams.get("Para1");
   const pdfaddress = searchParams.get("pdfaddress");
 
- 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfUrl;
@@ -52,7 +50,7 @@ function Blog() {
         </div>
 
         <div className={style.Para1Container}>
-        {Para1 && (
+          {Para1 && (
             <div
               className={style.content}
               dangerouslySetInnerHTML={{ __html: Para1 }}

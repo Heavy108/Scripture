@@ -15,7 +15,7 @@ export async function fetchData() {
         Date: obj.Date.toJSON()
       };
     });
-    console.log(plainObjects)
+    // console.log(plainObjects)
     return plainObjects;
   } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });

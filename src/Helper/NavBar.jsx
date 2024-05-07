@@ -11,6 +11,8 @@ function NavBar() {
           <a href="#">Bytes</a>
           <a href="/Events">Events</a>
           <a href="#">About Us</a>
+          <a href="/Login">Login</a>
+          <a href="/SignUp">SignUp</a>
         </div>
         <button className={styles.navButton}>Contact US</button>
       </div>
