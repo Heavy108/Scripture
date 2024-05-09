@@ -6,7 +6,7 @@ import bcryptjs from "bcryptjs";
 
 connect()
 
-export async function POST(request){
+export async function POST({request}){
     try {
 
         const reqBody = await request.json()
