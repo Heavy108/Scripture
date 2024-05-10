@@ -21,12 +21,12 @@ function DashBoard() {
       <div className={style.superContainer}>
         <div className={style.Container}>
           <ul className={style.items}>
-            <li
+            {/* <li
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}
             >
               Home
-            </li>
+            </li> */}
             <li
               onClick={() => handleClick('Magazines')}
               className={activeItem === 'Magazines' ? `${style.activeItem}` : ''}
