@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import style from "@/CSS/DashCarasoul.module.css";
-// import axios from "axios";
+
 
 function DashCarasoul({ Data }) {
   const [editingItems, setEditingItems] = useState({});
@@ -32,7 +32,7 @@ function DashCarasoul({ Data }) {
       for (let key in editedItem) {
         formData.append(key, editedItem[key]);
       }
-      console.log(formData);
+      
       const res = await fetch('/api/DashCarasoul', {
         method: 'POST',
         body: formData
@@ -52,6 +52,7 @@ function DashCarasoul({ Data }) {
               type="file"
               name="file"
               onChange={(e) => handleInputChange(item._id, "image", e.target.files[0])}
+              required
             />
             <input
               type="text"
@@ -60,6 +61,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "title", e.target.value)
               }
+              required
             />
             <input
               type="text"
@@ -68,6 +70,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "text", e.target.value)
               }
+              required
             />
             <input
               type="text"
@@ -76,6 +79,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "address", e.target.value)
               }
+              required
             />
             <input
               type="text"
@@ -84,6 +88,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "bg_color", e.target.value)
               }
+              required
             />
             <input type="submit" value="Submit" />
           </form>

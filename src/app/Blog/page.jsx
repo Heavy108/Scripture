@@ -18,11 +18,11 @@ function Blog() {
   const field = searchParams.get("field");
   const Para1 = searchParams.get("Para1");
   const pdfaddress = searchParams.get("pdfaddress");
-
+  console.log(pdfaddress)
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = pdfUrl.split("/").pop();
+    link.href = pdfaddress;
+    link.download = pdfaddress.split("/").pop();
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -44,7 +44,7 @@ function Blog() {
             {/* button here */}
             <div className={style.buttonAlignment}>
               <button onClick={handleDownload}>Download</button>
-              <ViewPDFButton phdfPath={pdfaddress} />
+              <ViewPDFButton pdfPath={pdfaddress} />
             </div>
           </div>
         </div>

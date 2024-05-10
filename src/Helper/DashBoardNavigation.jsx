@@ -28,10 +28,10 @@ function DashBoard() {
               Home
             </li> */}
             <li
-              onClick={() => handleClick('Magazines')}
-              className={activeItem === 'Magazines' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick('MagazineUpdate')}
+              className={activeItem === 'MagazineUpdate' ? `${style.activeItem}` : ''}
             >
-              Magazines
+              <Link href="/MagazineUpdate">Magazine</Link>
             </li>
             <li
               onClick={() => handleClick('CarasoulUpdate')}

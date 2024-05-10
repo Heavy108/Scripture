@@ -9,19 +9,19 @@ export async function POST(request) {
     await connect();
     const data = await request.formData();
     const file = data.get('image');
-    console.log("from route hehehehe",data.get('_id'),file,data.get('title'),data.get('address'), data.get('bg_color'))
-    console.log("after file")
+    
+   
     if (!file) {
       return NextResponse.json({ success: false });
     }
-    console.log("from route")
+   
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const fileName = file.name;
-    const filePath = join(process.cwd(), 'public', 'pdf', fileName);
+    const filePath = join(process.cwd(), 'public', 'uploads', fileName);
 
     await writeFile(filePath, buffer);
-    console.log(`File saved at ${filePath}`);
+    
 
     // Extract other form fields
     const id = data.get('_id');
