@@ -4,8 +4,8 @@ function DashHome(){
 
     return(
         <>
-        {/* <DashBoard/> */}
-        <h1 style={{marginLeftt:'20rem'}}> From DashBoard Homea</h1>
+        <DashBoard/>
+        <h1 style={{marginLeft:'20rem'}}> From DashBoard Homea</h1>
         </>
     )
 }

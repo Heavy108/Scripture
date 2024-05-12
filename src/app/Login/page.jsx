@@ -21,9 +21,9 @@ function Login() {
       const response = await axios.post("/api/Login", user);
       console.log("Login success", response.data);
       
-      router.push("/DashBoard");
+      router.push("/DashHome");
     } catch (error) {
-      console.log("Login failed", error.message);
+      console.log("Login failed", error);
      
     }
   };

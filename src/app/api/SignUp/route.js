@@ -1,10 +1,7 @@
 import { db } from "@/dbconfig/dbfirebase";
-import { collection, addDoc ,getFirestore} from "firebase/firestore"; 
+import { doc, setDoc } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
-
-
-
 
 export async function POST(request) {
   try {
@@ -17,12 +14,14 @@ export async function POST(request) {
     const hashedPassword = await bcryptjs.hash(password, salt);
     console.log(username, hashedPassword);
 
-    // Store the user data in Firestore
-    const docRef =await addDoc(collection(db, "Users"),{
+    const userDocRef = doc(db, "Users", username);
+
+    await setDoc(userDocRef, {
       name: username,
       password: hashedPassword,
     });
-    console.log("Document written with ID: ", docRef.id);
+
+    console.log("Document written with ID: ", username);
     return NextResponse.json(
       { message: "User added successfully" },
       { status: 200 }
