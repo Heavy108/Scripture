@@ -12,7 +12,7 @@ import { fetchData } from "../api/Home/route";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
 const Data =await fetchCarasoulData()
-const items = Data.map((item) => item.toObject());
+// const items = Data.map((item) => item.toObject());
 const data = await fetchData();
 // const serializedData = data.map((item) => item.toObject());
 
@@ -22,7 +22,7 @@ function Home(){
   return(
     <>
     <NavBar/>
-    <Carasoul items={items}/>
+    <Carasoul items={Data}/>
     <Mag_Section Data={data} MagazinesPerPage={9}/>
       <Archive/>
       <NewsLetter/>

@@ -5,9 +5,10 @@ import Magazine from "@/Models/MagazineModel";
 
 connect();
 
-export async function fetchData() {
+export async function fetchBlogData(id) {
   try {
-    const Data = await Magazine.find({tags:"events"}).lean().exec();
+    const Data = await Magazine.find({_id:id}).lean().exec();
+    // console.log(Data)
     const plainObjects = Data.map(obj => {
       return {
         ...obj,
@@ -16,9 +17,9 @@ export async function fetchData() {
         pdfaddress:obj.pdfaddress.toString('base64')
       };
     });
+    // console.log(plainObjects)
     return plainObjects;
-    // console.log(Data)
-    // return Data;
+
   } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

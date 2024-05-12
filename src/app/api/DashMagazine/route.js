@@ -8,16 +8,18 @@ export async function POST(request) {
   try {
     await connect();
     const data = await request.formData();
+    let pdfBuffer;
+    let imageBuffer;
 
     // Handle image file upload
     const imageFile = data.get('image');
     let imageFileName;
     if (imageFile) {
       const imageBytes = await imageFile.arrayBuffer();
-      const imageBuffer = Buffer.from(imageBytes);
-      imageFileName = imageFile.name;
-      const imageFilePath = join(process.cwd(), 'public', 'uploads', imageFileName);
-      await writeFile(imageFilePath, imageBuffer);
+      imageBuffer = Buffer.from(imageBytes);
+      // imageFileName = imageFile.name;
+      // const imageFilePath = join(process.cwd(), 'public', 'uploads', imageFileName);
+      // await writeFile(imageFilePath, imageBuffer);
     }
 
     // Handle PDF file upload
@@ -25,10 +27,10 @@ export async function POST(request) {
     let pdfFileName;
     if (pdfFile) {
       const pdfBytes = await pdfFile.arrayBuffer();
-      const pdfBuffer = Buffer.from(pdfBytes);
-      pdfFileName = pdfFile.name;
-      const pdfFilePath = join(process.cwd(), 'public', 'pdf', pdfFileName);
-      await writeFile(pdfFilePath, pdfBuffer);
+       pdfBuffer = Buffer.from(pdfBytes);
+      // pdfFileName = pdfFile.name;
+      // const pdfFilePath = join(process.cwd(), 'public', 'pdf', pdfFileName);
+      // await writeFile(pdfFilePath, pdfBuffer);
     }
 
     // Extract other form fields
@@ -49,9 +51,11 @@ export async function POST(request) {
         Date:Date,
         Title:Title,
         Description:Description,
-        image: imageFileName ? `/uploads/${imageFileName}` : null,
+        // image: imageFileName ? `/uploads/${imageFileName}` : null,
+        image:imageBuffer,
         Para1:Para1,
-        pdfaddress: pdfFileName ? `/pdf/${pdfFileName}` : null,
+        // pdfaddress: pdfFileName ? `/pdf/${pdfFileName}` : null,
+        pdf:pdfBuffer
       },
       
     );

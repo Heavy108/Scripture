@@ -5,7 +5,7 @@ const CarasoulSchema = new mongoose.Schema({
   bg_color: String,
   text: String,
   Title: String,
-  image: String,
+  image: { type: Buffer, required: true },
   address : String,
 });
 

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import style from "@/CSS/DashCarasoul.module.css";
 
-
 function DashCarasoul({ Data }) {
   const [editingItems, setEditingItems] = useState({});
 
@@ -32,13 +31,13 @@ function DashCarasoul({ Data }) {
       for (let key in editedItem) {
         formData.append(key, editedItem[key]);
       }
-      console.log("error for here")
-      const res = await fetch('/api/DashCarasoul', {
-        method: 'POST',
-        body: formData
+      console.log("error for here");
+      const res = await fetch("/api/DashCarasoul", {
+        method: "POST",
+        body: formData,
       });
-      console.log("i am near the sucess")
-      console.log("success")
+      console.log("i am near the sucess");
+      console.log("success");
     } catch (error) {
       console.log("failed", error.message);
     }
@@ -52,8 +51,9 @@ function DashCarasoul({ Data }) {
             <input
               type="file"
               name="file"
-              onChange={(e) => handleInputChange(item._id, "image", e.target.files[0])}
-              
+              onChange={(e) =>
+                handleInputChange(item._id, "image", e.target.files[0])
+              }
             />
             <input
               type="text"
@@ -62,7 +62,6 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "title", e.target.value)
               }
-              
             />
             <input
               type="text"
@@ -71,7 +70,6 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "text", e.target.value)
               }
-              
             />
             <input
               type="text"
@@ -80,7 +78,6 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "address", e.target.value)
               }
-              
             />
             <input
               type="text"
@@ -89,7 +86,6 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "bg_color", e.target.value)
               }
-              
             />
             <input type="submit" value="Submit" />
           </form>
@@ -97,7 +93,7 @@ function DashCarasoul({ Data }) {
       ) : (
         <>
           <h4>{item._id}</h4>
-          <img src={item.image} alt={item.title} />
+          <img src={`data:image/jpeg;base64,${item.image}`} alt={item.title} />
           <h4>{item.title}</h4>
           <p>{item.text}</p>
           <h4>{item.address}</h4>

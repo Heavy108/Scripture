@@ -1,45 +1,49 @@
-// 'use client'
-// import { useRouter } from "next/navigation";
 import style from "../CSS/ThreeCardFrame.module.css";
-import Link from 'next/link';
-// import { fetchBlogData } from "@/app/api/Blog/route";
+import Link from "next/link";
 
-function ThreeCardFrame(props){
-  // const router =useRouter();
-  // const HandleClick =() =>{
-  //   console.log("i am")
-  //   router.forward({
-  //     href: "/Blog",
-  //     query : {...props}
-  //   })
-  // }
- 
-return (
-  <>
-  <div className={style.InfoCard_Container}>
-    <img src={props.image}/>
-    <div className={style.Card_Introduction}>
-      <div className={style.Card_Tags}>
-        <li className={style.Tags}>{props.tags}</li>
-        <li>{props.Date}</li>
-      </div>
-      <div>
-        <h2>{props.Title}</h2>
-        <p>{props.Description}</p>
-      </div>
-     
-      <div className={style.buttonAlignment}>
-      <Link href={{ pathname: '/Blog', query: { ...props } }} >
-        <button>Read More</button>
-      </Link>
-      
-    </div>
-    
-    </div>
+function ThreeCardFrame(props) {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const monthName = monthNames[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return `${monthName} ${day}, ${year}`;
+  };
 
-  </div>
-  </>
-)
+  return (
+    <div className={style.InfoCard_Container}>
+      <img src={props.image} alt="Card Image" />
+      <div className={style.Card_Introduction}>
+        <div className={style.Card_Tags}>
+          <li className={style.Tags}>{props.tags}</li>
+          <li>{formatDate(props.Date)}</li>
+        </div>
+        <div>
+          <h2>{props.Title}</h2>
+          <p>{props.Description}</p>
+        </div>
+        <div className={style.buttonAlignment}>
+          <Link href={{ pathname: "/Blog", query: { _id: props._id } }}>
+            <button>Read More</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ThreeCardFrame;

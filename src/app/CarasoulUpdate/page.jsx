@@ -5,7 +5,7 @@ import DashBoard from "@/Helper/DashBoardNavigation";
 
 
 const Data=await fetchCarasoulData()
-const serializedData = Data.map((item) => item.toObject());
+// const serializedData = Data.map((item) => item.toObject());
 function CarasoulUpdate(){
     
 
@@ -14,7 +14,7 @@ function CarasoulUpdate(){
         <div style={{display:"flex",flexDirection:"row"}}>
         <DashBoard/>
         <div style={{flexDirection:"column" , overflow:"hidden"}}>
-        <DashCarasoul Data={serializedData}/>
+        <DashCarasoul Data={Data}/>
         </div>
         </div>
         </>

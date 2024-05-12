@@ -8,6 +8,7 @@ import { fetchData } from "../api/Bytes/route";
 
 const data = await fetchData();
 // const serializedData = data.map((item) => item.toObject());
+// console.log(data)
 
 function Byte() {
   const Title = "Bytes";

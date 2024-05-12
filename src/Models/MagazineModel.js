@@ -7,9 +7,11 @@ const MagazineSchema = new mongoose.Schema({
   Date: Date,
   Title: String,
   Description: String,
-  image: String,
+  // image: String,
+  image: { type: Buffer, required: true },
   Para1 : String,
-  pdfaddress : String,
+  // pdfaddress : String,
+  pdf: { type: Buffer, required: true },
 });
 
 // const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);
