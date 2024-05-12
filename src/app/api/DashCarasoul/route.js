@@ -21,19 +21,20 @@ export async function POST(request) {
     const filePath = join(process.cwd(), 'public', 'uploads', fileName);
 
     await writeFile(filePath, buffer);
-    
+    const id = data.get('_id')
+    const CarasoulItems = await Carasoul.find({_id:id})
 
     // Extract other form fields
-    const id = data.get('_id');
-    const title = data.get('title');
-    const text = data.get('text');
-    const address = data.get('address');
-    const bgColor = data.get('bg_color');
-
+    
+    const title = data.get('title') || CarasoulItems.title;
+    const text = data.get('text') || CarasoulItems.text;
+    const address = data.get('address') || CarasoulItems.address;
+    const bgColor = data.get('bg_color') || CarasoulItems.bgColor;
+    // console.log()
     await Carasoul.findOneAndUpdate(
       { _id: id },
       {
-        image: `/pdf/${fileName}`, 
+        image: `/uploads/${fileName}`, 
         title:title,
         text:text,
         address:address,

@@ -32,17 +32,14 @@ function Dashmagazines() {
     ];
   
     return requiredFields.every((field) => {
-      // Check if the field is null or undefined
       if (field === null || field === undefined) {
         return false; // Treat null/undefined as an empty field
       }
   
-      // If the field is a string, check if it's not an empty string
       if (typeof field === "string") {
         return field.trim() !== "";
       }
   
-      // Otherwise, treat the field as non-empty
       return true;
     });
   };

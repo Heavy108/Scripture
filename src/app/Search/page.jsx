@@ -18,11 +18,11 @@ async function Search({searchParams}){
     
     return(<>
     <NavBar/>
-    {/* {data.length > 0 ? (
+    {data.length > 0 ? (
         <Mag_Section Data={data} MagazinesPerPage={3} />
       ) : (
         <div>
-          <h2>No magazines found for {month} {year}</h2>
+          {/* <h2>No magazines found for {month} {year}</h2> */}
           <img
             src="/NotFound.svg"
             alt="No Data"
@@ -33,8 +33,8 @@ async function Search({searchParams}){
             height={800}
           />
         </div>
-      )} */}
-       <Mag_Section Data={data} MagazinesPerPage={3} />
+      )}
+       {/* <Mag_Section Data={data} MagazinesPerPage={3} /> */}
       
     <Footer/>
     

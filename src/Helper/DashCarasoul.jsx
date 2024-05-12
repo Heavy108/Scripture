@@ -32,11 +32,12 @@ function DashCarasoul({ Data }) {
       for (let key in editedItem) {
         formData.append(key, editedItem[key]);
       }
-      
+      console.log("error for here")
       const res = await fetch('/api/DashCarasoul', {
         method: 'POST',
         body: formData
       });
+      console.log("i am near the sucess")
       console.log("success")
     } catch (error) {
       console.log("failed", error.message);
@@ -52,7 +53,7 @@ function DashCarasoul({ Data }) {
               type="file"
               name="file"
               onChange={(e) => handleInputChange(item._id, "image", e.target.files[0])}
-              required
+              
             />
             <input
               type="text"
@@ -61,7 +62,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "title", e.target.value)
               }
-              required
+              
             />
             <input
               type="text"
@@ -70,7 +71,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "text", e.target.value)
               }
-              required
+              
             />
             <input
               type="text"
@@ -79,7 +80,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "address", e.target.value)
               }
-              required
+              
             />
             <input
               type="text"
@@ -88,7 +89,7 @@ function DashCarasoul({ Data }) {
               onChange={(e) =>
                 handleInputChange(item._id, "bg_color", e.target.value)
               }
-              required
+              
             />
             <input type="submit" value="Submit" />
           </form>
