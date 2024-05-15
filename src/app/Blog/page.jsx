@@ -12,14 +12,7 @@ async function Blog({searchParams}) {
   // console.log(id)
   const Data =await  fetchBlogData(id)
   // console.log(Data)
-  // const handleDownload = () => {
-  //   const link = document.createElement("a");
-  //   link.href = pdfaddress;
-  //   link.download = pdfaddress.split("/").pop();
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
+  //
   return (
     <>
       <NavBar />
