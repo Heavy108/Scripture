@@ -5,9 +5,9 @@ import Mag_Section from "../../Helper/MagCluster";
 import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/SciTech/route";
 
-const data = await fetchData();
 // const serializedData = data.map((item) => item.toObject());
-function SciTech(){
+async function SciTech(){
+const data = await fetchData();
   
     
     const Title="SciTech"

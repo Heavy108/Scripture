@@ -6,11 +6,12 @@ import Mag_Section from "../../Helper/MagCluster";
 import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/Bytes/route";
 
-const data = await fetchData();
+
 // const serializedData = data.map((item) => item.toObject());
 // console.log(data)
 
-function Byte() {
+async function Byte() {
+  const data = await fetchData();
   const Title = "Bytes";
   const Image = "/Byte.svg";
   const Description =

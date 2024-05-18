@@ -11,19 +11,19 @@ import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/Home/route";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
-const Data =await fetchCarasoulData()
-// const items = Data.map((item) => item.toObject());
-const data = await fetchData();
+
 // const serializedData = data.map((item) => item.toObject());
 
 
 
-function Home(){
+async function Home(){
+  const Data =await fetchCarasoulData()
+const data = await fetchData();
   return(
     <>
     <NavBar/>
-    <Carasoul items={Data}/>
-    <Mag_Section Data={data} MagazinesPerPage={9}/>
+    <Carasoul items={Data}/> 
+    / <Mag_Section Data={data} MagazinesPerPage={9}/>
       <Archive/>
       <NewsLetter/>
       <Footer/> 

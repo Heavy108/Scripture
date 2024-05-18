@@ -5,10 +5,10 @@ import Mag_Section from "@/Helper/MagCluster";
 import Footer from "../../Helper/Footer";
 import { fetchData } from "../api/Events/route";
 
-const data = await fetchData();
+
 // const serializedData = data.map((item) => item.toObject());
-function Events(){
-  
+async function Events(){
+  const data = await fetchData();
     
     const Title="Events"
     const Image="/Events.png"
