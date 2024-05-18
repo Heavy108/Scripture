@@ -20,7 +20,7 @@ const Card = (props) => {
             backgroundColor: props.bg_color,
           }}
         >
-          <img src={props.image}></img>
+          <img src={`data:image/jpeg;base64,${props.image}`}></img>
         </div>
         <div className="Introduction">
           <h1>{props.title}</h1>

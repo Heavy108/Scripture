@@ -26,7 +26,7 @@ function ThreeCardFrame(props) {
 
   return (
     <div className={style.InfoCard_Container}>
-      <img src={props.image} alt="Card Image" />
+      <img src={`data:image/jpeg;base64,${props.image}`} alt="Card Image" />
       <div className={style.Card_Introduction}>
         <div className={style.Card_Tags}>
           <li className={style.Tags}>{props.tags}</li>

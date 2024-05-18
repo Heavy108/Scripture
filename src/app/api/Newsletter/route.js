@@ -7,7 +7,7 @@ connect();
 export async function POST(request){
     try{
         const reqBody =await request.json()
-        const {username ,email} =reqBody
+        const {username ,email,date} =reqBody
 
         console.log(reqBody);
          //check if user already exists
@@ -17,7 +17,7 @@ export async function POST(request){
              return NextResponse.json({error: "User already exists"}, {status: 400})
          }
          else{
-            await NewsLetter.create({Username: username ,Email:email});
+            await NewsLetter.create({Username: username ,Email:email,Date:date});
             return NextResponse.json({ message: "User added successfully" }, { status: 200 });
          }
 
