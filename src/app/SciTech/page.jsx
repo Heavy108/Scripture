@@ -1,9 +1,9 @@
 import "../global.css";
-import MagCard from "../../Helper/Mag_Intro_Card";
-import NavBar from "../../Helper/NavBar";
-import Mag_Section from "../../Helper/MagCluster";
-import Footer from "../../Helper/Footer";
-import { fetchData } from "../api/SciTech/route";
+import MagCard from "@/Helper/Mag_Intro_Card";
+import NavBar from "@/Helper/NavBar";
+import Mag_Section from "@/Helper/MagCluster";
+import Footer from "@/Helper/Footer";
+import { fetchData } from "@/app/api/SciTech/route";
 
 // const serializedData = data.map((item) => item.toObject());
 async function SciTech(){

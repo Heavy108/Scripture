@@ -3,7 +3,7 @@ function NavBar() {
   return (
     <>
       <div className={styles.Navbar}>
-        <h2 ><a href="/Home">Scripture</a></h2>
+        <h2 ><a href="/">Scripture</a></h2>
         <div className={styles.options}>
           <a href="/Bytes">Bytes</a>
           <a href="/SciTech">SciTech</a>
