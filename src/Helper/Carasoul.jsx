@@ -13,7 +13,7 @@ const Card = (props) => {
   
   return (
     <>
-      <div className={`outerFrame`} style={{scale: props.isActive ? 1 : 0.9, transition: "scale 0.25s ease-in-out"}}>
+      <div className={`outerFrame ${props.isActive ? "active" : ""}`}>
         <div
           className="potrait"
           style={{
@@ -56,7 +56,7 @@ const Carasoul = ({items}) => {
         setCurrentSlide((currentSlide + 1) % carouselItems.length);
       },
 
-      1000
+      5000
     );
 
     return () => clearInterval(interval);

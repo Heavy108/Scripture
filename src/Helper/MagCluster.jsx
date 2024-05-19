@@ -5,13 +5,16 @@ import Pagination from "./Pagination";
 import ThreeCardFrame from "./ThreeCardFrame";
 import Magazine from "../Helper/Magazine_Frame_1";
 
-function Mag_Section({  Data, MagazinesPerPage}) {
+function Mag_Section({ Data, MagazinesPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
- 
+
+  // Reverse the Data array
+  const reversedData = [...Data].reverse();
+
   const lastIndex = currentPage * MagazinesPerPage;
   const firstIndex = lastIndex - MagazinesPerPage;
-  const records = Data.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(Data.length / MagazinesPerPage);
+  const records = reversedData.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(reversedData.length / MagazinesPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
   const handlePrevPage = () => {
@@ -37,20 +40,20 @@ function Mag_Section({  Data, MagazinesPerPage}) {
       </center>
 
       {MagazinesPerPage > 3 ? (
-  records.map((items, index) => (
-    <Magazine
-      key={index}
-      {...items} // Passing all properties from 'items' as props
-    />
-  ))
-) : (
-  records.map((items, index) => (
-    <ThreeCardFrame 
-      key={index}
-      {...items} // Passing all properties from 'items' as props
-    />
-  ))
-)}
+        records.map((items, index) => (
+          <Magazine
+            key={index}
+            {...items} // Passing all properties from 'items' as props
+          />
+        ))
+      ) : (
+        records.map((items, index) => (
+          <ThreeCardFrame
+            key={index}
+            {...items} // Passing all properties from 'items' as props
+          />
+        ))
+      )}
 
       <Pagination
         currentPage={currentPage}
@@ -61,7 +64,7 @@ function Mag_Section({  Data, MagazinesPerPage}) {
         npage={npage}
         firstIndex={firstIndex}
         lastIndex={lastIndex}
-        data={Data.length}
+        data={reversedData.length}
       />
     </div>
   );
