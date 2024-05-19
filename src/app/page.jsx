@@ -6,12 +6,10 @@ import NavBar from "@/Helper/NavBar";
 import Archive from "@/Helper/Archive";
 import NewsLetter from "@/Helper/Newsletter";
 import Footer from "@/Helper/Footer";
-// import {Data} from "@/JS/Data";
 
 import { fetchData } from "@/app/api/Home/route";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
-// const serializedData = data.map((item) => item.toObject());
 
 async function Home() {
   const Data = await fetchCarasoulData();
