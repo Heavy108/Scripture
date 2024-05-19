@@ -1,4 +1,4 @@
-// 'use Client'
+'use Client'
 import "./global.css";
 import Carasoul from "@/Helper/Carasoul";
 import Mag_Section from "@/Helper/MagCluster";
