@@ -18,7 +18,7 @@ export async function fetchData() {
         // pdfaddress:obj.pdfaddress.toString('base64')
       };
     });
-    console.log(plainObjects)
+    console.log("Lates Item: ", plainObjects[plainObjects.length - 1].field)
     return plainObjects;
     // return Data;
   } catch (e) {
