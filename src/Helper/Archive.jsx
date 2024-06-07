@@ -1,6 +1,5 @@
 'use client'
 import style from "../CSS/Archive.module.css";
-import Link from "next/link";
 
 const MonthList = (props) => {
   // Function to handle click on a month
@@ -41,7 +40,7 @@ function Archive() {
         <div className={style.ArchiveImg}>
           <img src="/Archive.svg" alt="ArchSearch" />
         </div>
-        <div style={{ width: "25.12rem" }}>
+        <div className={style.ArchList_cotainer}>
           <h2 className={style.archHeading}>Archive</h2>
           <div className={style.ArchList}>
             {years.map((year, index) => (

@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 .horizontal_line{
   width: 75%;
-  margin-left: 12rem;
-  
+  margin-left: 2.5rem;
   
   height: .75rem; 
   border-bottom:2px solid black; 
   text-align: center;
 }
 .Subscribe_message{
-  font-size: 1rem;
+  font-size: 0.6rem;
   background-color:white;
   padding: 0 20px;
+  
 }
 .Newsletter_outerFrame{
   display: flex;
   justify-content:center;
-  gap: 12rem;
-  margin-top:7.5rem;
-  width: 100%;
-  margin-bottom:7.5rem;
+  flex-direction: column;
+ margin: 3rem 2rem 2rem 2rem;
 }
 .Subscribe_Section{
   display: flex;
@@ -80,4 +78,105 @@
   border: none;
   outline: none;
   width: 100%;
+}
+.Newsletter_image{
+  display: none;
+}
+@media only screen and (min-width:768px){
+  .Newsletter_image{
+    display:contents;
+    width: 45%;
+    align-items: center;
+    
+  }
+  .Newsletter_image img{
+    height: 20rem;
+    width: 20rem;
+  }
+  .Newsletter_outerFrame{
+    flex-direction: row;
+    gap: 3rem;
+    margin-top: 7.5rem;
+  }
+  .Subscribe_Section{
+    width: 45%;
+  }
+  .horizontal_line{
+    margin-left: 5rem;
+  }
+  .Subscribe_message{
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width:1024px){
+  .Newsletter_image img{
+    height: 22rem;
+    width: 22rem;
+  }
+  .Newsletter_outerFrame{
+    gap: 6rem;
+  }
+}
+@media only screen and (min-width:1440px){
+  .Newsletter_image img{
+    height: 25rem;
+    width: 33rem;
+  }
+  .Newsletter_outerFrame{
+    gap: 6rem;
+    margin: 7.5rem 10rem 7.5rem 10rem
+  }
+  .Subscribe_Section{
+    width: 31rem;
+    height: 22.5rem;
+  }
+  .Subscribe_message{
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width:2560px){
+  .Newsletter_image img{
+    height: 35rem;
+    width: 40rem;
+  }
+  .Newsletter_outerFrame{
+    gap: 12rem;
+    margin: 10.5rem 13rem 10.5rem 13rem
+  }
+  .Subscribe_Section{
+    width: 40rem;
+    height: 30rem;
+  }
+  .Subscribe_message{
+    font-size: 2rem;
+  }
+  .Subscribe_Section h2{
+    font-size: 3rem;
+  }
+  .Subscribe_Section p{
+    font-size: 1.8rem;
+  }
+  .label{
+    font-size: 2rem;
+  }
+  .input_container{
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+  .Subscribe_button{
+    font-size: 2rem;
+    width: max-content;
+    height: auto;
+    padding: 2rem;
+  }
+  .input_container input{
+    font-size: 2rem;
+  }
+  .icon{
+    font-size: 2rem;
+    margin-right: 2rem;
+  }
+  .horizontal_line{
+    margin-left: 16rem;
+  }
 }

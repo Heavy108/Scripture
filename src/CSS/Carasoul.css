@@ -1,63 +1,53 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
 
 :root {
   --up: 1;
   --card-margin: 5px;
-  --card-shadow: rgba(46, 49, 52, .4);
+  --card-shadow: rgba(46, 49, 52, 0.4);
   --color-white: #fff;
   --color-lightgrey: white;
   --color-ui: #999;
   --color-ui-hover: #666;
-  --cardWidth: calc(76vw/var(--up));
+  --cardWidth: calc(76vw / var(--up));
   --carouselWidth: calc(var(--cardWidth) * var(--num));
   --carouselLeftMargin: calc(11vw - var(--cardWidth));
 }
 
-.CarasoulDescription{
+.CarasoulDescription {
   margin-bottom: 0;
   margin-top: 3rem;
 }
 
 .carouselwrapper {
   max-width: max-content;
-    overflow: hidden;
-    background:var(--color-lightgrey);
-    position:relative;
-    margin: 0;
-    
-    
+  overflow: hidden;
+  background: var(--color-lightgrey);
+  position: relative;
+  margin: 0;
 }
 
-.carousel{
-    width: var(--carouselWidth);
-    margin: 0 0 0 var(--carouselLeftMargin);
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: space-between;
-    
-    padding: 0;
-    
-    
-    
-  
+.carousel {
+  width: var(--carouselWidth);
+  margin: 0 0 0 var(--carouselLeftMargin);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
   &.prev {
     animation-duration: 1s;
-    animation-timing-function:cubic-bezier(0.83, 0, 0.17, 1);
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     animation-name: prev;
-    
   }
-  
+
   &.next {
     animation-duration: 1s;
-    animation-timing-function:cubic-bezier(0.83, 0, 0.17, 1);
+    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
     animation-name: next;
   }
 }
 
 .ui {
-  
   width: calc(100% - var(--card-margin) * 2);
   display: flex;
   justify-content: center;
@@ -66,28 +56,20 @@
   z-index: 100;
   margin-top: 2rem;
 
-  
-  
-
-      span{
-        
-        font-size:45px ;
-      
-     
+  span svg {
+    align-content: center;
+    font-size: 40px;
   }
 }
-
 
 @keyframes next {
   from {
     transform: translateX(0px);
-    
   }
   to {
     transform: translateX(calc(0px + var(--cardWidth)));
-    animation-duration: 2s; 
+    animation-duration: 2s;
   }
-  
 }
 
 @keyframes prev {
@@ -96,8 +78,7 @@
   }
   to {
     transform: translateX(calc(0px - var(--cardWidth)));
-  animation-duration: 2s; 
-
+    animation-duration: 2s;
   }
 }
 
@@ -105,7 +86,8 @@
   border: 1px solid black;
   /* width: 30%; */
   width: calc(var(--cardWidth) - var(--card-margin) * 1);
-  height: 22rem;
+  flex-direction: column;
+  height: 26rem;
   align-items: center;
   margin-top: 3rem;
   border-radius: 1rem;
@@ -114,77 +96,242 @@
   font-family: "Inter", sans-serif;
   scale: 0.9;
   opacity: 0.8;
-  transition: transform 0.8ms cubic-bezier(0.42, 0, 0.58, 1), scale 0.8s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 0.8ms cubic-bezier(0.42, 0, 0.58, 1),
+    scale 0.8s cubic-bezier(0.42, 0, 0.58, 1),
+    opacity 0.8s cubic-bezier(0.42, 0, 0.58, 1);
   /* transition: scale 0.25s ease-in-out; */
 }
-.outerFrame.active{
+.outerFrame.active {
   scale: 1;
   opacity: 1;
   transition: scale 0.25s ease-in-out;
 }
-.potrait{
+.potrait {
   border: 1px solid black;
-  width:45%;
-  height: 15rem;
-  margin: 2rem;
+  height: 8rem;
+  width: 86%;
+  margin: 1rem;
   border-radius: 8px;
 }
 
-.Introduction{
+/* .Introduction{
   
   width: 45%;
   height: 15rem;
   margin :2rem;
   text-align: left;
   border-radius: 8px;
+} */
+.Introduction {
+  margin: 1rem;
+}
+.Introduction h1 {
+  font-size: 1rem;
+}
+.Introduction p {
+  font-size: 0.8rem;
 }
 
-.potrait img{
+.potrait img {
   width: 95%;
-  height: 15rem;
+
+  height: 8rem;
+  /* height: 15rem; */
   object-fit: cover;
   rotate: 10deg;
   border-radius: 0.5rem;
-} 
-  /* read more button  */
-.read{
+}
+/* read more button  */
+.read {
   border-radius: 2.5rem;
-  height: 2.5rem;
-  width:8rem;
-  margin: 0.5rem;
-  margin-top: 1rem;
-  
+  height: 2rem;
+  font-size: 0.8rem;
+  margin: auto 0rem 0.5rem 0rem;
+  width: 8rem;
   color: white;
   background-color: black;
   font-weight: 700;
   font-style: normal;
-  cursor:pointer;
+  cursor: pointer;
   z-index: 100;
 }
 
 .dots-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  margin: 0 10px; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
 }
 
-
 .dot {
-  width: 12px; 
-  height: 12px; 
-  background-color: #ccc; 
-  border-radius: 50%; 
-  margin: 0 5px; 
-  cursor: pointer; 
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-
 .dot.active {
-  background-color:black; 
+  background-color: black;
+}
+.prev,
+.next {
+  cursor: pointer;
+  align-content: center;
+}
+
+@media only screen and (min-width: 375px) {
+  .potrait {
+    height: 9rem;
+  }
+  .potrait img {
+    height: 9rem;
+  }
+  .Introduction h1 {
+    font-size: 1rem;
+  }
+  .Introduction p {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .potrait {
+    height: 10rem;
+  }
+  .potrait img {
+    height: 10rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .outerFrame {
+    flex-direction: row;
+    height: 16rem;
+  }
+  .potrait {
+    height: 12rem;
+    width: 55%;
+    margin: 1.5rem;
+  }
+  .potrait img {
+    height: 12rem;
+  }
+  .Introduction {
+    width: 45%;
+    height: 13rem;
+    margin: 1.5rem;
+    text-align: left;
+  }
+  .Introduction h1 {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .outerFrame {
+    height: 20rem;
+  }
+  .potrait {
+    height: 14rem;
+    width: 55%;
+  }
+  .potrait img {
+    height: 14rem;
+  }
+  .Introduction {
+    width: 45%;
+    height: 15rem;
+  }
+  .Introduction h1 {
+    font-size: 1.6rem;
+  }
+  .Introduction p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .outerFrame {
+    height: 22rem;
+  }
+  .potrait {
+    height: 15rem;
+    width: 45%;
+  }
+  .potrait img {
+    height: 15rem;
+  }
+  .Introduction {
+    width: 45%;
+    height: 15rem;
+  }
+  .Introduction h1 {
+    font-size: 2rem;
+  }
+  .Introduction p {
+    font-size: 1.2rem;
+  }
+  .read {
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .outerFrame {
+    height: 22rem;
+  }
+  .potrait {
+    height: 15rem;
+    width: 45%;
+  }
+  .potrait img {
+    height: 15rem;
+  }
+  .Introduction {
+    width: 45%;
+    height: 15rem;
+  }
+  .Introduction h1 {
+    font-size: 2rem;
+  }
+  .Introduction p {
+    font-size: 1.2rem;
+  }
+  .read {
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (min-width: 2560px){
+  .outerFrame{
+   height: 30rem;
+   border-radius: 2rem;
+  }
+   .potrait{
+     height: 20rem;
+     width: 45%;
+   }
+   .potrait img{
+     height: 20rem;
+   }
+   .Introduction{  
+ width: 45%;
+ height: 20rem;
+
+ 
+ 
+}
+.Introduction h1{
+font-size: 3rem;
+}
+.Introduction p{
+  font-size: 1.8rem;
+}
+.read{
+  font-size: 1.5rem;
+  height: 4.5rem;
+  width: 14rem;
   
 }
-.prev ,.next{
-  cursor: pointer;
-}
+   }

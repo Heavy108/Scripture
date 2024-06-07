@@ -1,13 +1,13 @@
 .Magazine_Container {
   font-family: "Inter", sans-serif;
-  width: 22rem;
+  width: 14rem;
   box-shadow: rgba(0, 0, 0, 0.36) 0px 1px 4px;
   border-radius: 8px;
   margin: 1.5rem;
 }
 .thumbnail img {
-  width: 20rem;
-  height: 20rem;
+  width: 12rem;
+  height: 12rem;
   margin: 1rem 1rem 0 1rem;
 }
 
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  width: 20rem;
+  width: 12rem;
   margin: 0rem 1rem 0 1rem;
 }
 
@@ -29,4 +29,53 @@ text-decoration: none;
 align-content: center;
 color: black;
 cursor: pointer;
+}
+
+@media only screen and (min-width:375px){
+  .Magazine_Container{
+    width: 16rem;
+  }
+  .thumbnail img{
+    height: 14rem;
+    width: 14rem;
+  }
+  .mag_Info{
+    width: 14rem;
+  }
+}
+@media only screen and (min-width:425px){
+  .Magazine_Container{
+    width: 18rem;
+  }
+  .thumbnail img{
+    height: 16rem;
+    width: 16rem;
+  }
+  .mag_Info{
+    width: 16rem;
+  }
+}
+@media only screen and (min-width:1440px){
+  .Magazine_Container{
+    width: 22rem;
+  }
+  .thumbnail img{
+    height: 20rem;
+    width: 20rem;
+  }
+  .mag_Info{
+    width: 20rem;
+  }
+}
+@media only screen and (min-width:2560px){
+  .Magazine_Container{
+    width: 24rem;
+  }
+  .thumbnail img{
+    height: 22rem;
+    width: 22rem;
+  }
+  .mag_Info{
+    width: 22rem;
+  }
 }

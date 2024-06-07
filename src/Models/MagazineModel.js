@@ -18,6 +18,6 @@ const MagazineSchema = new mongoose.Schema({
 const Magazine = mongoose.models.OneMagazine || mongoose.model("OneMagazine", MagazineSchema);
 
 
-console.log(mongoose.models);
+// console.log(mongoose.models);
 
 export default Magazine;

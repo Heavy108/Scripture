@@ -13,6 +13,6 @@ const CarasoulSchema = new mongoose.Schema({
 const Carasoul =
   mongoose.models.Carasoul || mongoose.model("Carasoul", CarasoulSchema);
 
-console.log(mongoose.models);
+// console.log(mongoose.models);
 
 export default Carasoul;

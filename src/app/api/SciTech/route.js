@@ -8,7 +8,7 @@ export async function fetchData() {
   try {
     const data = await Magazine.find(
       { tags: "Research" },
-      { _id: 1, image: 1, Date: 1, Title: 1, Description: 1 }
+      { _id: 1, image: 1, Date: 1, Title: 1, Description: 1,tags:1 }
     ).lean().exec();
     const plainObjects = data.map(obj => {
       return {

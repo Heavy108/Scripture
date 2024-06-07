@@ -2,6 +2,7 @@ import style from "../CSS/ThreeCardFrame.module.css";
 import Link from "next/link";
 
 function ThreeCardFrame(props) {
+  console.log(props.tags)
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const monthNames = [
@@ -22,6 +23,7 @@ function ThreeCardFrame(props) {
     const day = date.getDate();
     const year = date.getFullYear();
     return `${monthName} ${day}, ${year}`;
+   
   };
 
   return (

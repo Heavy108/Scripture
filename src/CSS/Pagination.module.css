@@ -7,12 +7,13 @@
 }
 .Component p{
   color: #bebebe;
+  font-size: 0.5rem;
 }
 
 .Component button {
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +23,8 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 54px 55px,
     rgba(0, 0, 0, 0.09) 0px -12px 30px, rgba(0, 0, 0, 0) 0px 4px 6px,
     rgba(0, 0, 0, 0.11) 0px 12px 11px, rgba(0, 0, 0, 0.04) 0px -3px 5px;
-}
+  }
+
 
 .pageItem {
   cursor: pointer;
@@ -31,6 +33,7 @@
   margin: 0.8rem;
   opacity: 0.6;
   font-weight: 600;
+  font-size: 0.8rem;
   
 }
 .buttonComp{
@@ -38,4 +41,51 @@
   align-items: center;
   font-family: "Inter", sans-serif;
 
+}
+.buttonComp button{
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+@media only screen and (min-width:375px){
+  .Component p{
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (min-width:768px){
+  .Component p{
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width:1024px){
+  .Component p{
+    font-size: 1rem;
+  }
+  .Component button{
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .buttonComp button{
+    font-size: 1rem;
+    
+  }
+  .pageItem{
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width:2560px){
+  .Component p{
+    font-size: 2rem;
+  }
+  .Component button{
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .buttonComp button{
+    font-size: 1.5rem;
+    
+  }
+  .pageItem{
+    font-size: 1.5rem;
+  }
 }

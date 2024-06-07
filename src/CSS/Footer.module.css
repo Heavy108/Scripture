@@ -3,7 +3,8 @@ background-color: black;
 color: white;
 font-family: "Inter", sans-serif;
 display: flex;
-height: 26.5rem;
+flex-direction: column;
+height: auto;
 align-items: center;
 margin-top: 7.5rem;
 }

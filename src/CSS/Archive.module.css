@@ -8,6 +8,8 @@
   margin: 0rem 0.4rem 0rem 0rem;
   font-weight: 600;
   cursor: pointer;
+  font-size: 0.8rem;
+
 }
 .MonthList li:first-child{
   font-weight:400;
@@ -16,27 +18,150 @@
 .ArchConatiner{
   display: flex;
   justify-content:center;
-  gap: 12rem;
+  flex-direction: column;
+  /* gap: 12rem; */
   font-family: "Inter", sans-serif;
-  
+  /* margin-left:2rem; */
   width: 100%;
 }
 .ArchList{
-  height:22rem;
-  overflow-y: scroll;
-  width: max-content;
+  height:20rem;
+  overflow: scroll;
+  width: 15rem;
   scrollbar-width: thin;
   scrollbar-color:rgb(91, 85, 85) white;
   scroll-behavior: smooth;
-  scroll-margin-right: 1rem;
-  ;
+  /* scroll-margin-right: 1rem; */
+  margin: 2rem;
+  
+  
   
 }
 .archHeading{
   font-size: 32px;
+  margin-left: 2rem;
 }
 .ArchiveImg {
-  margin-top: 2rem;
+  margin: 2rem 2rem 0rem 2rem;
+  align-items: center;
+ 
 
+}
+.ArchiveImg img{
+ height: 15rem;
+  width: 15rem;
+}
+.ArchList_cotainer{
+  width: 16rem;
+  
+}
+
+@media only screen and (min-width:375px){
+  .ArchList_cotainer{
+    width: 18rem;
+    margin-left: 2.5rem;
+  }
+  .ArchList{
+    width: 16rem;
+  }
+  .ArchiveImg img{
+    margin: 2.5rem 2.5rem 0rem 2.5rem;
+  }
+}
+@media only screen and (min-width:425px){
+  .ArchList_cotainer{
+    width: 20rem;
+    margin-left: 2.5rem;
+  }
+  .ArchList{
+    width: 18.5rem;
+  }
+  .ArchiveImg img{
+    margin: 2.5rem 3.5rem 0rem 2.5rem;
+  }
+}
+@media only screen and (min-width:768px){
+  .ArchConatiner{
+    flex-direction: row;
+  gap: 3rem;
+  }
+  .ArchiveImg{
+    align-content: center;
+  }
+  .ArchiveImg img{
+    margin: 0;
+    height: 18rem;
+    width: 18rem;
+
+  }
+  .ArchList{
+    margin: 0rem;
+  }
+  .ArchList_cotainer{
+    margin: 0rem;
+    width: 18rem;
+  }
+  .archHeading{
+    font-size: 32px;
+    margin-left: 0rem;
+  }
+}
+
+@media only screen and (min-width:1024px){
+  .ArchiveImg img{
+    height: 22rem;
+    width: 22rem;
+  }
+  .ArchList{
+    width: 28rem;
+  }
+  .ArchList_cotainer{
+    width: 27rem;
+  }
+  .MonthList li{
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width:1440px){
+  .ArchConatiner{
+    gap: 9rem;
+  }
+  .ArchiveImg img{
+    height: 25rem;
+    width: 25rem;
+  }
+  .ArchList{
+    width: 32rem;
+  }
+  .ArchList_cotainer{
+    width: 30rem;
+  }
+  .MonthList li{
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width:2560px){
+  .ArchConatiner{
+    gap: 20rem;
+  }
+  .ArchiveImg img{
+    height: 35rem;
+    width: 35rem;
+  }
+  .ArchList{
+    width: 50rem;
+    height: 30rem;
+  }
+  .ArchList_cotainer{
+    width: 45rem;
+  }
+  .MonthList li{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  .archHeading{
+    font-size: 3rem;
+    margin-left: 0rem;
+  }
 }
 

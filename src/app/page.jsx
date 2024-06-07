@@ -18,7 +18,7 @@ async function Home() {
     <>
       <NavBar />
       <Carasoul items={Data} />
-      / <Mag_Section Data={data} MagazinesPerPage={9} />
+       <Mag_Section Data={data} MagazinesPerPage={9} />
       <Archive />
       <NewsLetter />
       <Footer />
