@@ -35,8 +35,8 @@ const ViewPDFButton = ({ pdfPath }) => {
 
   return (
     <>
-      <button onClick={handleViewClick}>View PDF</button>
-      <button onClick={handleDownloadClick}>Download PDF</button>
+      <button onClick={handleViewClick}>View </button>
+      <button onClick={handleDownloadClick}>Download </button>
     </>
   );
 };
