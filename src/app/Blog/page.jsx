@@ -17,7 +17,7 @@ async function Blog({searchParams}) {
     <>
       <NavBar />
       <BlogSection data={Data}/>
-      {/* <Comment /> */}
+      <Comment />
       <Footer />
     </>
   );
