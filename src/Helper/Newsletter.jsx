@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import style from "../CSS/Newsletter.module.css";
 import { MdEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
+import Modal from "./Modal";
 
 function NewsLetter() {
   const initialState = {
@@ -12,6 +13,12 @@ function NewsLetter() {
   };
 
   const [user, setUser] = useState(initialState);
+  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState({ show: false, message: "" });
+
+  const closeModal = () => {
+    setShowModal({ show: false, message: "" });
+  };
 
   const getCurrentDate = () => {
     const date = new Date();
@@ -28,15 +35,25 @@ function NewsLetter() {
       const response = await axios.post("/api/Newsletter", userDataWithDate);
       console.log(" success", response.data);
 
-      // Clear input fields after successful submission
-      setUser(initialState);
+      setShowModal({ show: true, message: "Subscription successful" });
+      setUser(initialState); // Clear input fields
     } catch (error) {
-      console.log(" failed", error.message);
+      if (error.response.data.error == "User already exists") {
+        setShowModal({ show: true, message: "Email already exists" });
+      } else {
+        console.log(" failed", error.message);
+        setShowModal({ show: true, message: "Unexpected Error Occured" });
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
+      {showModal.show && (
+        <Modal closeModal={closeModal} message={showModal.message} />
+      )}
       <div className={style.Newsletter_outerFrame}>
         <div className={style.Subscribe_Section}>
           <h2>Subscribe Newsletter</h2>
@@ -71,8 +88,12 @@ function NewsLetter() {
             />
           </div>
 
-          <button className={style.Subscribe_button} onClick={onSubscribe}>
-            Subscribe
+          <button
+            className={style.Subscribe_button}
+            onClick={onSubscribe}
+            disabled={loading}
+          >
+            {loading ? "Processing..." : "Subscribe"}
           </button>
         </div>
 

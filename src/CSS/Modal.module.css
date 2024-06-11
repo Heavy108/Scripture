@@ -1,0 +1,17 @@
+.Modal{
+    background-color:white;
+    border: 2px solid #b9b9b9;
+    color:black;
+    width: fit-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index:1;
+}
+.MOdalHead{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: calc(100vw);
+    
+}

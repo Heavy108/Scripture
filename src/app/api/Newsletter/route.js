@@ -8,12 +8,13 @@ export async function POST(request){
     try{
         const reqBody =await request.json()
         const {username ,email,date} =reqBody
-
+        
         console.log(reqBody);
          //check if user already exists
-         const user = await NewsLetter.findOne({email})
-        //  console.log("Existing User:", user);
+         const user = await NewsLetter.findOne({Email:email})
+         console.log("Existing User:", user);
          if(user){
+        
              return NextResponse.json({error: "User already exists"}, {status: 400})
          }
          else{
@@ -22,7 +23,7 @@ export async function POST(request){
          }
 
     }catch(error){
-        // console.error("Error in POST /api/Newsletter:", error);
+        console.error("Error in POST /api/Newsletter:", error);
        return NextResponse.json({error:error.message},{status:500})
     }
     
