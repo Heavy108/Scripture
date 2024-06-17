@@ -1,6 +1,7 @@
 import { connect } from "@/dbconfig/dbconfig";
 import { NextResponse,NextRequest } from "next/server";
 import NewsLetter from "@/Models/NewsletterModel";
+import { sendEmail } from "@/JS/verify";
 
 connect();
 
@@ -18,7 +19,8 @@ export async function POST(request){
              return NextResponse.json({error: "User already exists"}, {status: 400})
          }
          else{
-            await NewsLetter.create({Username: username ,Email:email,Date:date});
+           const SaveUser= await NewsLetter.create({Username: username ,Email:email,Date:date,IsVerified:false});
+            await sendEmail({email , userId:SaveUser._id})
             return NextResponse.json({ message: "User added successfully" }, { status: 200 });
          }
 

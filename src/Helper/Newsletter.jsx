@@ -35,7 +35,7 @@ function NewsLetter() {
       const response = await axios.post("/api/Newsletter", userDataWithDate);
       console.log(" success", response.data);
 
-      setShowModal({ show: true, message: "Subscription successful" });
+      setShowModal({ show: true, message: "Check Your Email For Verification" });
       setUser(initialState); // Clear input fields
     } catch (error) {
       if (error.response.data.error == "User already exists") {
