@@ -9,6 +9,8 @@ import Footer from "@/Helper/Footer";
 
 import { fetchData } from "@/app/api/Home/route";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
+import { Suspense } from "react";
+import LoadingSkeleton from "@/Helper/LoadingSkeleton";
 
 
 async function Home() {
@@ -16,8 +18,12 @@ async function Home() {
   const data = await fetchData();
   return (
     <>
+    
       <NavBar />
-      <Carasoul items={Data} />
+      <Suspense fallback={<LoadingSkeleton />}>
+        <Carasoul items={Data} />
+      </Suspense>
+      {/* <Carasoul items={Data} /> */}
        <Mag_Section Data={data} MagazinesPerPage={9} />
       <Archive />
       <NewsLetter />

@@ -5,6 +5,18 @@ export default function NotFound() {
     <div style={styles.container}>
       <h1 style={styles.header}>404</h1>
       <p style={styles.message}>Oops! The page you are looking for does not exist.</p>
+      <div>
+          {/* <h2>No magazines found for {month} {year}</h2> */}
+          <img
+            src="/NotFound.svg"
+            alt="No Data"
+            style={{filter:"grayscale()",
+                marginLeft:"28rem",
+                alignContent:"center"
+            }}
+            height={800}
+          />
+        </div>
       <Link href="/">
         <a style={styles.link}>Go back home</a>
       </Link>
