@@ -58,7 +58,7 @@ src/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/scripture.git
+   git clone https://github.com/Heavy108/scripture.git
    cd scripture
    ```
 
