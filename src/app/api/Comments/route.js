@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Pusher from "pusher";
 import { connect } from "@/dbconfig/dbconfig";
 
-import Comment from "@/models/Comment"; // your Mongoose schema
+import Comment from "@/Models/Comment"; // your Mongoose schema
 
 const pusher = new Pusher({
   appId: process.env.PUSHER_APP_ID,
