@@ -40,6 +40,12 @@
   color: #BEBEBE;
   font-weight: 400;
 }
+.commentHead{
+  color: black;
+}
+.comment{
+  color: rgb(19, 16, 16);
+}
 
 .label{
   font-size: 0.8rem;

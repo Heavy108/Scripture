@@ -9,15 +9,16 @@ import BlogSection from "@/Helper/BlogSection";
 
 async function Blog({searchParams}) {
  const id =searchParams._id
-  // console.log(id)
+ 
   const Data =await  fetchBlogData(id)
   // console.log(Data)
   //
   return (
     <>
       <NavBar />
-      <BlogSection data={Data}/>
-      <Comment />
+      <BlogSection data={Data} />
+      <Comment blogId={id} />
+
       <Footer />
     </>
   );
