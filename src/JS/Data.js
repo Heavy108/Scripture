@@ -19,7 +19,7 @@ export const Data = [
   { thumbnail: "/1.webp", Heading: "Heading" },
   { thumbnail: "/1.webp", Heading: "Heading" },
   { thumbnail: "/1.webp", Heading: "Heading" },
-  { thumbnail: "/1.webp", Heading: "Heading" },
+  
 ];
   
 export const Data2 =[ {
