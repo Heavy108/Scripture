@@ -9,8 +9,6 @@
   --color-ui: #999;
   --color-ui-hover: #666;
   --cardWidth: calc(76vw / var(--up));
-  --carouselWidth: calc(var(--cardWidth) * var(--num));
-  --carouselLeftMargin: calc(11vw - var(--cardWidth));
 }
 
 .CarasoulDescription {
@@ -19,68 +17,80 @@
 }
 
 .carouselwrapper {
-  max-width: max-content;
-  overflow: hidden;
+  max-width: 100vw;
   background: var(--color-lightgrey);
   position: relative;
   margin: 0;
 }
 
-.carousel {
-  width: var(--carouselWidth);
-  margin: 0 0 0 var(--carouselLeftMargin);
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  justify-content: space-between;
-  padding: 0;
-  &.prev {
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
-    animation-name: prev;
-  }
-
-  &.next {
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
-    animation-name: next;
-  }
+/* =========================================
+   Embla Viewport & Container Styles
+========================================= */
+.embla {
+  overflow: hidden; /* Hides the cards outside the view */
+  width: 100vw;
 }
 
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  /* This ensures the slide takes up the exact width your old cards did */
+  flex: 0 0 var(--cardWidth); 
+  min-width: 0;
+  display: flex;
+  justify-content: center; /* Centers the inner card */
+}
+
+/* =========================================
+   UI / Controls
+========================================= */
 .ui {
   width: calc(100% - var(--card-margin) * 2);
   display: flex;
   justify-content: center;
-
   padding: var(--card-margin);
   z-index: 100;
   margin-top: 2rem;
-
-  span svg {
-    align-content: center;
-    font-size: 40px;
-  }
 }
 
-@keyframes next {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(calc(0px + var(--cardWidth)));
-    animation-duration: 2s;
-  }
+.ui span svg {
+  align-content: center;
+  font-size: 40px;
 }
 
-@keyframes prev {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(calc(0px - var(--cardWidth)));
-    animation-duration: 2s;
-  }
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
 }
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: black;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  align-content: center;
+}
+
+/* =========================================
+   Card Styles & Animations
+========================================= */
 @keyframes scaleUpSmooth {
   0% {
     scale: 0.9;
@@ -120,33 +130,26 @@
   border-radius: 8px;
 }
 
-/* .Introduction{
-  
-  width: 45%;
-  height: 15rem;
-  margin :2rem;
-  text-align: left;
-  border-radius: 8px;
-} */
-.Introduction {
-  margin: 1rem;
-}
-.Introduction h1 {
-  font-size: 1rem;
-}
-.Introduction p {
-  font-size: 0.8rem;
-}
-
 .potrait img {
   width: 95%;
-
   height: 8rem;
-  /* height: 15rem; */
   object-fit: cover;
   rotate: 10deg;
   border-radius: 0.5rem;
 }
+
+.Introduction {
+  margin: 1rem;
+}
+
+.Introduction h1 {
+  font-size: 1rem;
+}
+
+.Introduction p {
+  font-size: 0.8rem;
+}
+
 /* read more button  */
 .read {
   border-radius: 2.5rem;
@@ -162,32 +165,9 @@
   z-index: 100;
 }
 
-.dots-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: black;
-}
-.prev,
-.next {
-  cursor: pointer;
-  align-content: center;
-}
-
+/* =========================================
+   Media Queries
+========================================= */
 @media only screen and (min-width: 375px) {
   .potrait {
     height: 9rem;
@@ -211,6 +191,7 @@
     height: 10rem;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .outerFrame {
     flex-direction: row;
@@ -234,6 +215,7 @@
     font-size: 1.2rem;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .outerFrame {
     height: 20rem;
@@ -283,61 +265,32 @@
     height: 2.5rem;
   }
 }
-@media only screen and (min-width: 1440px) {
+
+@media only screen and (min-width: 2560px) {
   .outerFrame {
-    height: 22rem;
+    height: 30rem;
+    border-radius: 2rem;
   }
   .potrait {
-    height: 15rem;
+    height: 20rem;
     width: 45%;
   }
   .potrait img {
-    height: 15rem;
+    height: 20rem;
   }
   .Introduction {
     width: 45%;
-    height: 15rem;
+    height: 20rem;
   }
   .Introduction h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .Introduction p {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
   .read {
-    font-size: 1rem;
-    height: 2.5rem;
+    font-size: 1.5rem;
+    height: 4.5rem;
+    width: 14rem;
   }
 }
-@media only screen and (min-width: 2560px){
-  .outerFrame{
-   height: 30rem;
-   border-radius: 2rem;
-  }
-   .potrait{
-     height: 20rem;
-     width: 45%;
-   }
-   .potrait img{
-     height: 20rem;
-   }
-   .Introduction{  
- width: 45%;
- height: 20rem;
-
- 
- 
-}
-.Introduction h1{
-font-size: 3rem;
-}
-.Introduction p{
-  font-size: 1.8rem;
-}
-.read{
-  font-size: 1.5rem;
-  height: 4.5rem;
-  width: 14rem;
-  
-}
-   }
